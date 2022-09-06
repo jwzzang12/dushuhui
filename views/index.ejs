@@ -1,0 +1,25 @@
+<%- include("include/left"); %>
+<%- include("include/bottom"); %>
+      <section id="right">
+        <div id="thisWeek" class="contents">
+          <div id="dDay">D - 4</div>
+          <div class="bookTW">
+            <div class="bookCover"><img src="<%= list[0].imgSrc %>" alt="" /></div>
+            <div class="bookInfo">
+              <div class="bookTitle"><%= list[0].title %></div>
+              <div class="desc"><%= list[0].desc %></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const dDay = $("#dDay");
+      const today = new Date();
+      const date = new Date("Sep 11,2022, 00:00:00").getTime();
+      const gap = date - today;
+      const result = Math.floor(gap / (1000 * 60 * 60 * 24));
+      dDay.html(`D - ${result}`);
+    </script>
+  </body>
+</html>

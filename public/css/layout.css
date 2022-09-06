@@ -1,0 +1,177 @@
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+body {
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  background-color: #aaa;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#main {
+  display: flex;
+  width: 100vw;
+}
+
+#left {
+  flex-basis: 60%;
+  padding: 80px 40px 80px 200px;
+}
+#left #mainTop {
+  display: flex;
+  justify-content: space-between;
+  height: 50vh;
+}
+#left #mainTop .menu span {
+  display: block;
+  padding-bottom: 30px;
+}
+#left #mainTop #mainTitle {
+  font-size: 60px;
+}
+#left #mainBottom .bookList {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+#left #mainBottom .bookList li {
+  flex-basis: 20%;
+  margin: 10px;
+  margin-bottom: 30px;
+}
+#left #mainBottom .bookList li img {
+  width: 100%;
+}
+
+#right {
+  flex-basis: 40%;
+  padding: 80px 150px 80px 40px;
+  background-color: #777;
+}
+#right #thisWeek #dDay {
+  margin-bottom: 30px;
+  font-size: 50px;
+  font-weight: 300;
+}
+#right #thisWeek .bookCover {
+  margin-bottom: 30px;
+}
+#right #thisWeek .bookCover img {
+  width: 100%;
+}
+#right #thisWeek .bookInfo {
+  display: flex;
+  justify-content: space-between;
+}
+#right #thisWeek .bookInfo .bookTitle {
+  flex-basis: 25%;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.5;
+}
+#right #thisWeek .bookInfo .desc {
+  flex-basis: 70%;
+  line-height: 1.5;
+}
+#right #search .searchBox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+#right #search .searchBox #keyword {
+  flex-basis: 80%;
+  height: 45px;
+  padding: 0 20px;
+  font-family: inherit;
+  border: 1px solid #111;
+  outline: none;
+}
+#right #search .searchBox button {
+  flex-basis: 10%;
+  padding: 0;
+  border: 1px solid #111;
+  background-color: #fff;
+}
+#right #search .list {
+  width: 100%;
+}
+#right #search .list li img {
+  width: 100%;
+}
+#right #search #result li {
+  margin-bottom: 20px;
+}
+#right #search #result li .img {
+  margin-bottom: 20px;
+}
+#right #search #result li .info .title {
+  font-weight: 800;
+}
+#right #search #result li .info .author {
+  font-weight: 400;
+}
+#right #search #result li.selected {
+  border: 2px solid #111;
+}
+#right #review {
+  position: relative;
+}
+#right #review .inputBox {
+  padding-bottom: 30px;
+}
+#right #review .inputBox #reviewTitle {
+  display: flex;
+}
+#right #review .inputBox #reviewTitle .label {
+  flex-basis: 25%;
+}
+#right #review .inputBox #reviewTitle input {
+  width: 100%;
+}
+#right #review .inputBox textarea {
+  width: 100%;
+  resize: none;
+}
+#right #review .inputBox .memberList {
+  width: 100%;
+}
+#right #review .inputBox .memberList ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#right #review .inputBox .memberList ul li span {
+  margin-right: 3px;
+}
+#right #review #desc {
+  width: 100%;
+}
+#right #review .btn {
+  display: flex;
+  justify-content: end;
+}
+#right #review .line {
+  width: 100%;
+  height: 1px;
+  margin: 50px 0;
+  background-color: #111;
+}

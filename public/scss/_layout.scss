@@ -1,0 +1,122 @@
+@import "vars";
+
+body {
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: $font-color;
+  background-color: #ccc;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  border: none;
+  background: none;
+  outline: none;
+  font-family: inherit;
+}
+* {
+  box-sizing: border-box;
+}
+#main {
+  display: flex;
+  width: 100vw;
+}
+#left {
+  flex-basis: 60%;
+  padding: 80px 40px 80px 200px;
+  #mainTop {
+    display: flex;
+    justify-content: space-between;
+    height: 50vh;
+    .menu {
+      span {
+        display: block;
+        padding-bottom: 30px;
+      }
+    }
+    #mainTitle {
+      font-size: 60px;
+    }
+  }
+  #mainBottom {
+    .bookList {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      li {
+        flex-basis: 20%;
+        margin: 10px;
+        margin-bottom: 30px;
+        img {
+          width: 100%;
+        }
+        .bookTitle {
+          margin-top: 20px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+#right {
+  flex-basis: 40%;
+  padding: 80px 200px 80px 40px;
+  background-color: #555;
+  color: #fff;
+  #thisWeek {
+    #dDay {
+      margin-bottom: 30px;
+      font-size: 50px;
+      font-weight: 300;
+    }
+    .bookCover {
+      margin-bottom: 30px;
+      img {
+        width: 100%;
+      }
+    }
+    .bookInfo {
+      display: flex;
+      justify-content: space-between;
+
+      .bookTitle {
+        flex-basis: 25%;
+      }
+      .desc {
+        flex-basis: 70%;
+      }
+    }
+  }
+  #search {
+    .searchBox {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      #keyword {
+        flex-basis: 80%;
+        height: 45px;
+        outline: none;
+        border: 1px solid #111;
+        padding: 0 20px;
+        font-family: inherit;
+      }
+      #btnSearch {
+        flex-basis: 15%;
+        background-color: #fff;
+        padding: 0;
+        border: 1px solid #111;
+      }
+    }
+    .list {
+      width: 100%;
+      li {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

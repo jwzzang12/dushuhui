@@ -1,0 +1,62 @@
+<%- include("include/left"); %>
+<%- include("include/bottom"); %>
+      <section id="right">
+        <div id="search" class="contents">
+          <div class="searchBox">
+            <input type="text" id="keyword" placeholder="검색어를 입력하세요" name="keyword" />
+            <button id="btnSearch"><span class="material-icons"> search </span></button>
+            <button id="btnAdd"><span class="material-icons">
+              add
+              </span></button>
+          </div>
+          <div id="result">
+            <ul class="list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const list = $("#result .list");
+      $("#btnSearch").on("click", function () {
+        const keyword = $("#keyword").val();
+        $.ajax({ url: `http://127.0.0.1:8099/search/${keyword}` }).done(function (response) {
+          const items = response.result.items;
+          console.log(items)
+          let tempHtml = "";
+          $.each(items, function (idx, item) {
+            tempHtml += `<li>
+              <div class="img"><img src="${item.image}"></div>
+              <div class="info">
+                <ul>
+                  <li class="title">${item.title}</li>
+                  <li class="author">${item.author}</li>
+                  <li class="desc blind">${item.description}</li>
+                </ul>
+              </div>
+              </a>
+            </li>`;
+          });
+          list.html(tempHtml);
+        });
+      });
+      $("#result .list").on("click","li",function(){
+        $(this).addClass("selected").siblings().removeClass("selected")
+        const imgSrc = $(this).find(".img img").attr("src")
+        const title = $(this).find(".title").text().replace(/ *\([^)]*\) */g, "")
+        const author = $(this).find(".author").text()
+        const desc = $(this).find(".desc").text()
+        $("#btnAdd").on("click",function(){
+        $.ajax({url:`http://127.0.0.1:8099/add`,
+        type:"POST",
+      data:{ imgSrc: imgSrc, title: title, author: author,desc:desc },success:function(data){
+        location.reload()
+      },
+    error: function (error){
+        alert(error);
+    }})
+      })
+      });
+
+    </script>
+  </body>
+</html>

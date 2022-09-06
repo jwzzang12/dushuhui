@@ -1,0 +1,37 @@
+<%- include("include/left"); %>
+<%- include("include/bottom"); %>
+      <section id="right">
+        <div id="review" class="contents">
+          <form action="/register" method="POST">
+            <div class="inputBox">
+              <label id="reviewTitle">
+                <span class="label">Title</span>
+                <input type="text" name="title" id="title" />
+              </label>
+            </div>
+            <div class="inputBox">
+              <label>
+                <div class="memberList">
+                  <ul>
+                    <li><span>E.B.Ko</span><input type="radio" value="E.B.Ko" name="member" /></li>
+                    <li><span>J.W.Moon</span><input type="radio" value="J.W.Moon" name="member" /></li>
+                    <li><span>H.S.Jang</span><input type="radio" value="H.S.Jang" name="member" /></li>
+                    <li><span>Y.J.Chae</span><input type="radio" value="Y.J.Chae" name="member" /></li>
+                  </ul>
+                </div>
+              </label>
+            </div>
+            <div class="inputBox">
+              <label>
+                <textarea name="reviewTxt" id="reviewTxt" rows="3"></textarea>
+              </label>
+            </div>
+            <div class="btn"><button class="btnAdd">Add</button></div>
+          </form>
+          <div class="line"></div>
+
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

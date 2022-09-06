@@ -1,0 +1,188 @@
+@import "vars";
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+body {
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: $font-color;
+  background-color: $main-color;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+* {
+  box-sizing: border-box;
+}
+#main {
+  display: flex;
+  width: 100vw;
+}
+#left {
+  flex-basis: 60%;
+  padding: 80px 40px 80px 200px;
+  #mainTop {
+    display: flex;
+    justify-content: space-between;
+    height: 50vh;
+    .menu {
+      span {
+        display: block;
+        padding-bottom: 30px;
+      }
+    }
+    #mainTitle {
+      font-size: 60px;
+    }
+  }
+  #mainBottom {
+    .bookList {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      overflow: scroll;
+      li {
+        flex-basis: 20%;
+        margin: 10px;
+        margin-bottom: 30px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+#right {
+  flex-basis: 40%;
+  padding: 80px 150px 80px 40px;
+  background-color: $sub-color;
+  #thisWeek {
+    #dDay {
+      margin-bottom: 30px;
+      font-size: 50px;
+      font-weight: 300;
+    }
+    .bookCover {
+      margin-bottom: 30px;
+      img {
+        width: 100%;
+      }
+    }
+    .bookInfo {
+      display: flex;
+      justify-content: space-between;
+      // font-size: ;
+      .bookTitle {
+        flex-basis: 25%;
+        font-size: 20px;
+        font-weight: 900;
+        line-height: 1.5;
+      }
+      .desc {
+        flex-basis: 70%;
+        line-height: 1.5;
+      }
+    }
+  }
+  #search {
+    .searchBox {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      #keyword {
+        flex-basis: 80%;
+        height: 45px;
+        padding: 0 20px;
+        font-family: inherit;
+        border: 1px solid #111;
+        outline: none;
+      }
+      button {
+        flex-basis: 10%;
+        padding: 0;
+        border: 1px solid #111;
+        background-color: #fff;
+      }
+    }
+    .list {
+      width: 100%;
+      li {
+        img {
+          width: 100%;
+        }
+      }
+    }
+    #result {
+      li {
+        margin-bottom: 20px;
+        .img {
+          margin-bottom: 20px;
+        }
+        .info {
+          .title {
+            font-weight: 800;
+          }
+          .author {
+            font-weight: 400;
+          }
+        }
+        &.selected {
+          border: 2px solid #111;
+        }
+      }
+    }
+  }
+  #review {
+    position: relative;
+    .inputBox {
+      padding-bottom: 30px;
+      #reviewTitle {
+        display: flex;
+        .label {
+          flex-basis: 25%;
+        }
+        input {
+          width: 100%;
+        }
+      }
+      textarea {
+        width: 100%;
+        resize: none;
+      }
+      .memberList {
+        width: 100%;
+        ul {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          li {
+            span {
+              margin-right: 3px;
+            }
+          }
+        }
+      }
+    }
+    #desc {
+      width: 100%;
+    }
+    .btn {
+      display: flex;
+      justify-content: end;
+    }
+    .line {
+      width: 100%;
+      height: 1px;
+      margin: 50px 0;
+      background-color: #111;
+    }
+  }
+}
