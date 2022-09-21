@@ -19,7 +19,7 @@
       const list = $("#result .list");
       $("#btnSearch").on("click", function () {
         const keyword = $("#keyword").val();
-        $.ajax({ url: `https://127.0.0.1:8099/search/${keyword}` }).done(function (response) {
+        $.ajax({ url: `https://dushuhui.herokuapp.com/search/${keyword}` }).done(function (response) {
           const items = response.result.items;
           console.log(items)
           let tempHtml = "";
