@@ -46,7 +46,7 @@
         const author = $(this).find(".author").text()
         const desc = $(this).find(".desc").text()
         $("#btnAdd").on("click",function(){
-        $.ajax({url:`https://127.0.0.1:8099/add`,
+        $.ajax({url:`https://dushuhui.herokuapp.com/add`,
         type:"POST",
       data:{ imgSrc: imgSrc, title: title, author: author,desc:desc },success:function(data){
         location.reload()
