@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: "Nanum Myeongjo", serif;
+  font-family: "DM Sans", "Noto Sans KR", sans-serif;
   font-size: 16px;
   font-weight: 600;
   color: #111;
@@ -32,8 +32,8 @@ button {
 }
 
 #left {
-  flex-basis: 60%;
-  padding: 80px 40px 80px 200px;
+  flex-basis: 70%;
+  padding: 80px 40px 80px 100px;
 }
 #left #mainTop {
   display: flex;
@@ -54,7 +54,7 @@ button {
   overflow: scroll;
 }
 #left #mainBottom .bookList li {
-  flex-basis: 20%;
+  flex-basis: 18%;
   margin: 10px;
   margin-bottom: 30px;
 }
@@ -63,8 +63,8 @@ button {
 }
 
 #right {
-  flex-basis: 40%;
-  padding: 80px 150px 80px 40px;
+  flex-basis: 30%;
+  padding: 80px 100px 80px 40px;
   background-color: #777;
 }
 #right #thisWeek #dDay {
@@ -83,14 +83,14 @@ button {
   justify-content: space-between;
 }
 #right #thisWeek .bookInfo .bookTitle {
-  flex-basis: 25%;
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.5;
 }
 #right #thisWeek .bookInfo .desc {
-  flex-basis: 70%;
+  flex-basis: 80%;
   line-height: 1.5;
+  font-weight: 400;
 }
 #right #search .searchBox {
   display: flex;
@@ -116,6 +116,10 @@ button {
 }
 #right #search .list li img {
   width: 100%;
+}
+#right #search #result > ul {
+  display: flex;
+  flex-wrap: wrap;
 }
 #right #search #result li {
   margin-bottom: 20px;

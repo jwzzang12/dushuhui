@@ -3,7 +3,8 @@
   display: none; /* Chrome, Safari, Opera*/
 }
 body {
-  font-family: "Nanum Myeongjo", serif;
+  font-family: "DM Sans", "Noto Sans KR", sans-serif;
+
   font-size: 16px;
   font-weight: 600;
   color: $font-color;
@@ -27,8 +28,8 @@ button {
   width: 100vw;
 }
 #left {
-  flex-basis: 60%;
-  padding: 80px 40px 80px 200px;
+  flex-basis: 70%;
+  padding: 80px 40px 80px 100px;
   #mainTop {
     display: flex;
     justify-content: space-between;
@@ -50,7 +51,7 @@ button {
       flex-wrap: wrap;
       overflow: scroll;
       li {
-        flex-basis: 20%;
+        flex-basis: 18%;
         margin: 10px;
         margin-bottom: 30px;
         img {
@@ -61,8 +62,8 @@ button {
   }
 }
 #right {
-  flex-basis: 40%;
-  padding: 80px 150px 80px 40px;
+  flex-basis: 30%;
+  padding: 80px 100px 80px 40px;
   background-color: $sub-color;
   #thisWeek {
     #dDay {
@@ -81,14 +82,14 @@ button {
       justify-content: space-between;
       // font-size: ;
       .bookTitle {
-        flex-basis: 25%;
         font-size: 20px;
-        font-weight: 900;
+        font-weight: 700;
         line-height: 1.5;
       }
       .desc {
-        flex-basis: 70%;
+        flex-basis: 80%;
         line-height: 1.5;
+        font-weight: 400;
       }
     }
   }
@@ -121,6 +122,10 @@ button {
       }
     }
     #result {
+      > ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
       li {
         margin-bottom: 20px;
         .img {

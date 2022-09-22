@@ -79,11 +79,13 @@ app.post("/add", (req, res) => {
   const title = req.body.title;
   const author = req.body.author;
   const desc = req.body.desc;
+  const link = req.body.link;
   db.collection("dushuhui").insertOne({
     imgSrc: imgSrc,
     title: title,
     author: author,
     desc: desc,
+    link: link,
   });
   db.collection("dushuhui")
     .find()

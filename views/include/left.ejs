@@ -9,12 +9,9 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=ZCOOL+QingKe+HuangYou&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="css/layout.css" />
     <script src="/js/jquery-3.6.0.min.js"></script>
@@ -23,13 +20,18 @@
     <main id="main">
       <section id="left">
         <div id="mainTop">
-          <h1 id="mainTitle"><a href="/">读书会</a></h1>
+          <h1 id="mainTitle"><a href="/">DUSHUHUI</a></h1>
           <div class="menu">
             <span><a href="/">This Week</a></span>
-            <span><a href="/review">Review</a></span>
             <span><a href="/search">Search</a></span>
+            <span class="review">Review</span>
             <!-- <span>Search</span> -->
           </div>
         </div>
+        <script>
+          $(".review").on("click",function(){
+            alert("준비중입니다!")
+          })
+        </script>
 
 

@@ -4,7 +4,9 @@
         <div id="thisWeek" class="contents">
           <div id="dDay">D - 4</div>
           <div class="bookTW">
-            <div class="bookCover"><img src="<%= list[0].imgSrc %>" alt="" /></div>
+            <a href="<%= list[0].link %>" target="_blank">
+              <div class="bookCover"><img src="<%= list[0].imgSrc %>" alt="" /></div>
+            </a>
             <div class="bookInfo">
               <div class="bookTitle"><%= list[0].title %></div>
               <div class="desc"><%= list[0].desc %></div>

@@ -2,7 +2,9 @@
   <ul class="bookList">
     <% list.forEach((item,idx)=>{ %>
       <li>
+        <a href="<%= item.link %>" target="_blank">
         <div class="bookCover"><img src="<%= item.imgSrc %>" alt=""></div>
+      </a>
       </li>
       <% }) %>
   </ul>

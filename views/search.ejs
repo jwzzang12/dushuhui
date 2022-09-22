@@ -19,7 +19,7 @@
       const list = $("#result .list");
       $("#btnSearch").on("click", function () {
         const keyword = $("#keyword").val();
-        $.ajax({ url: `https://dushuhui.herokuapp.com/search/${keyword}` }).done(function (response) {
+        $.ajax({ url: `http://127.0.0.1:8099/search/${keyword}` }).done(function (response) {
           const items = response.result.items;
           console.log(items)
           let tempHtml = "";
@@ -31,9 +31,9 @@
                   <li class="title">${item.title}</li>
                   <li class="author">${item.author}</li>
                   <li class="desc blind">${item.description}</li>
+                  <li class="link blind">${item.link}</li>
                 </ul>
               </div>
-              </a>
             </li>`;
           });
           list.html(tempHtml);
@@ -45,10 +45,11 @@
         const title = $(this).find(".title").text().replace(/ *\([^)]*\) */g, "")
         const author = $(this).find(".author").text()
         const desc = $(this).find(".desc").text()
+        const link = $(this).find(".link").text()
         $("#btnAdd").on("click",function(){
-        $.ajax({url:`https://dushuhui.herokuapp.com/add`,
+        $.ajax({url:`http://127.0.0.1:8099/add`,
         type:"POST",
-      data:{ imgSrc: imgSrc, title: title, author: author,desc:desc },success:function(data){
+      data:{ imgSrc: imgSrc, title: title, author: author,desc: desc,link: link },success:function(data){
         location.reload()
       },
     error: function (error){
