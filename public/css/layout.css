@@ -78,14 +78,11 @@ button {
 #right #thisWeek .bookCover img {
   width: 100%;
 }
-#right #thisWeek .bookInfo {
-  display: flex;
-  justify-content: space-between;
-}
 #right #thisWeek .bookInfo .bookTitle {
   font-size: 20px;
   font-weight: 700;
   line-height: 1.5;
+  margin-bottom: 20px;
 }
 #right #thisWeek .bookInfo .desc {
   flex-basis: 80%;
