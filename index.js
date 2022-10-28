@@ -14,7 +14,7 @@ MongoClient.connect(process.env.MONGO_URL, { useUnifiedTopology: true }, (err, c
   db = client.db("crudapp");
 });
 
-app.set("view engine", "ejs");
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "/public")));
 app.use("/upload", express.static(path.join(__dirname, "/upload")));
@@ -27,35 +27,10 @@ app.get("/", (req, res) => {
     .find()
     .sort({ _id: -1 })
     .toArray((err, result) => {
-      res.render("index", { list: result });
+      res.json(result);
     });
 });
 
-app.post("/register", (req, res) => {
-  const title = req.body.title;
-  const member = req.body.member;
-  const reviewTxt = req.body.reviewTxt;
-  db.collection("review").insertOne({
-    title: title,
-    member: member,
-    reviewTxt: reviewTxt,
-  });
-  db.collection("review")
-    .find()
-    .sort({ _id: -1 })
-    .toArray((err, result) => {
-      res.json({ review: result });
-    });
-});
-app.get("/search", (req, res) => {
-  db.collection("dushuhui")
-    .find()
-    .sort({ _id: -1 })
-    .toArray((err, result) => {
-      res.render("search", { list: result });
-    });
-  // res.redirect("/search");
-});
 app.get("/search/:keyword", (req, res) => {
   const queryTxt = encodeURIComponent(req.params.keyword);
   axios({
@@ -67,7 +42,7 @@ app.get("/search/:keyword", (req, res) => {
   })
     .then(function (response) {
       console.log(response);
-      res.json({ result: response.data });
+      res.json(response.data);
     }) //resolve
     .catch(function (error) {
       console.log(error);
@@ -91,9 +66,26 @@ app.post("/add", (req, res) => {
     .find()
     .sort({ _id: -1 })
     .toArray((err, result) => {
-      res.json({ list: result });
+      res.json(result);
     });
 });
+
+// app.post("/register", (req, res) => {
+//   const title = req.body.title;
+//   const member = req.body.member;
+//   const reviewTxt = req.body.reviewTxt;
+//   db.collection("review").insertOne({
+//     title: title,
+//     member: member,
+//     reviewTxt: reviewTxt,
+//   });
+//   db.collection("review")
+//     .find()
+//     .sort({ _id: -1 })
+//     .toArray((err, result) => {
+//       res.json({ review: result });
+//     });
+// });
 
 app.listen(PORT, () => {
   console.log(`${PORT}에서 서버 대기중`);
